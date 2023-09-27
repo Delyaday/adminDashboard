@@ -1,0 +1,84 @@
+﻿<div class="content">
+
+    <div class="display-date">
+        <span>{{ currentDate }}</span>
+    </div>
+
+    <div class="top-container">
+        <div class="info">
+            <h1 class="title"><fa-icon class="icon-title" [icon]="faChartLine"></fa-icon>Аналитика</h1>
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <mat-card class="clients">
+            <div class="icon-clients">
+                <fa-icon class="" [icon]="faUser"></fa-icon>
+            </div>
+
+            <div class="number-clients">
+               {{ clients.length }}
+            </div>
+
+            <div class="title-clients">
+                Количество Клиентов
+            </div>
+        </mat-card>
+
+
+        <mat-card class="attendance">
+            <div class="icon-attendance">
+                <fa-icon class="" [icon]="faChartColumn"></fa-icon>
+            </div>
+
+            <div class="number-attendance">
+                {{ visits.length }}
+            </div>
+
+            <div class="title-attendance">
+                Количество Посещений
+            </div>
+        </mat-card>
+
+        <mat-card class="revenue">
+            <div class="icon-revenue">
+                <fa-icon class="" [icon]="faCircleDollarToSlot"></fa-icon>
+            </div>
+
+            <div class="number-revenue">
+                87650 ₽
+            </div>
+
+            <div class="title-revenue">
+                Общая выручка
+            </div>
+        </mat-card>
+
+    </div>
+
+    <div class="container">
+        <mat-card class="chart-card">
+            <mat-card-header>
+                <mat-card-title>Анализ посещаемости услуг</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <chart-component class="chart" [options]="chartPieOptions"></chart-component>
+            </mat-card-content>
+
+        </mat-card>
+
+        <mat-card class="visits-card">
+            <mat-card-header>
+                <mat-card-title>Анализ доходов</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <chart-component class="chart" [options]="chartBarOptions"></chart-component>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+</div>

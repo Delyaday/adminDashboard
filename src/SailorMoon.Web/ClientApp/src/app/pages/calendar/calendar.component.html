@@ -1,0 +1,28 @@
+﻿<div class="content">
+
+    <div class="display-date">
+        <span>{{ currentDate }}</span>
+    </div>
+
+    <div class="top-container">
+        <h1 class="title"><fa-icon class="icon-title" [icon]="faCalendar"></fa-icon>Календарь</h1>
+        <!--<button mat-fab extended class="add-btn" color="primary" (click)="openDialog()">
+            <mat-icon>add</mat-icon>-->
+        <!--<fa-icon class="icon-btn" [icon]="faPlus"></fa-icon>-->
+        <!--Добавить
+        </button>-->
+    </div>
+
+    <div class="calendar-holder">
+        <full-calendar [options]='calendarOptions()' [events]="events">
+            <ng-template #eventContent let-arg>
+                <b>{{humanizeSeconds(arg.event.extendedProps.duration.asSeconds())}}</b>
+                &nbsp;
+                <i>{{ arg.event.title }}</i>
+                &nbsp;
+                <i>{{ arg.event.extendedProps.service.title }}</i>
+            </ng-template>
+        </full-calendar>
+    </div>
+
+</div>

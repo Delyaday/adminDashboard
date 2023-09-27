@@ -1,0 +1,69 @@
+﻿<div id="application" class="mat-app-background">
+    <mat-toolbar id="toolbar" *ngIf="user">
+
+        <span class="toolbar-spacer"></span>
+        <span class="toolbar-notifier"><fa-icon [icon]="faBell"></fa-icon></span>
+        <span>{{user.login}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (mouseup)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Выйти</span>
+            </button>
+
+        </mat-menu>
+    </mat-toolbar>
+
+    <div id="content" [style.top.px]="user ? 55 : 0" [style.left.px]="user ? 250 : 0">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div id="sidebar" *ngIf="user">
+        <div class="brand">
+            <button mat-icon-button class="brand-icon">
+            <img src="../assets/icons/logo.png" width="50" height="80" />
+            <!--<mat-icon>menu</mat-icon>-->
+            </button>
+            <span class="brand-name" routerLink="/">SailorMoon</span>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li routerLink="/calendar" routerLinkActive="active-button" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon [icon]="faCalendar"></fa-icon>
+                    <span>Календарь</span>
+                </li>
+                <li>
+                    <fa-icon [icon]="faChartLine"></fa-icon>
+                    <span>Мой график</span>
+                </li>
+                <li routerLink="/visits" routerLinkActive="active-button" ariaCurrentWhenActive="page">
+                    <fa-icon [icon]="faAddressBook"></fa-icon>
+                    <span>Записи</span>
+                </li>
+                <li routerLink="/services" routerLinkActive="active-button" ariaCurrentWhenActive="page">
+                    <fa-icon [icon]="faSprayCanSparkles"></fa-icon>
+                    <span>Услуги</span>
+                </li>
+                <li routerLink="/clients" routerLinkActive="active-button" ariaCurrentWhenActive="page">
+                    <fa-icon [icon]="faIdCard"></fa-icon>
+                    <span>Клиенты</span>
+                </li>
+                <li routerLink="/staff" routerLinkActive="active-button" ariaCurrentWhenActive="page">
+                    <fa-icon [icon]="faUsers"></fa-icon>
+                    <span>Персонал</span>
+                </li>
+                <li routerLink="/analytics" routerLinkActive="active-button" ariaCurrentWhenActive="page"> 
+                    <fa-icon [icon]="faChartSimple"></fa-icon>
+                    <span>Аналитика</span>
+                </li>
+                <li>
+                    <fa-icon [icon]="faGear"></fa-icon>
+                    <span>Настройки</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

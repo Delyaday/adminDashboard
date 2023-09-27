@@ -1,0 +1,54 @@
+﻿.content {
+    padding: 1.5rem 2rem;
+
+    .display-date {
+        display: flex;
+        justify-content: end;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .top-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+
+
+        .title {
+            font-size: 26px;
+            color: rgb(98, 63, 147);
+
+            .icon-title {
+                font-size: 24px;
+                margin-right: 15px;
+                color: #6e4e9e;
+            }
+        }
+
+        .add-btn {
+            padding: 18px;
+            font-size: 14px;
+
+            .icon-btn {
+                margin-right: 7px;
+            }
+        }
+    }
+
+    .calendar-holder {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 110px;
+
+        .fc-event {
+            overflow: hidden;
+            white-space: normal;
+        }
+
+        .fc-daygrid-event {
+            white-space: normal !important;
+        }
+    }
+}

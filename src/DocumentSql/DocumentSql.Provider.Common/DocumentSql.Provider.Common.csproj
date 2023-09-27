@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>DocumentSql.Provider</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Dapper.StrongName" Version="2.0.123" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DocumentSql.Abstractions\DocumentSql.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

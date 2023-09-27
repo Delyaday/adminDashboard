@@ -1,0 +1,28 @@
+﻿<div id="application" class="mat-app-background">
+    <mat-toolbar id="toolbar" color="primary" *ngIf="user">
+        <button mat-icon-button class="example-icon" (mouseup)="$event.stopPropagation(); isSidebarOpened = !isSidebarOpened">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Messager</span>
+        <span class="toolbar-spacer"></span>
+        <span>{{user.login}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (mouseup)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Выйти</span>
+            </button>
+
+        </mat-menu>
+    </mat-toolbar>
+
+    <div id="content" [style.top.px]="user ? 55 : 0">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div id="sidebar" [class.open]="isSidebarOpened" (mouseup)="$event.stopPropagation()">
+
+    </div>
+</div>

@@ -1,0 +1,129 @@
+
+.login-page {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background: #9c27b0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    $formWidth: 280px;
+    $formHeight: 390px;
+
+    .shadow {
+        position: absolute;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 70%);
+        left: 50%;
+        top: 50%;
+        transform: scale(0);
+        transition: transform 1s ease;
+        z-index: 10;
+    }
+
+    .shadow-black {
+        width: $formWidth;
+        height: $formHeight;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -($formWidth / 2);
+        margin-top: -($formHeight / 2);
+        border-radius: 15px;
+        background: linear-gradient(140deg, rgba(70,66,85,1) 0%, rgba(36,36,47,1) 100%);
+        box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        transition-delay: 0.5s;
+    }
+
+    .shadow1 {
+        opacity: 0.2;
+        width: $formWidth + 20;
+        height: $formHeight + 20;
+        margin-left: -($formWidth / 2)-10;
+        margin-top: -($formHeight / 2)-10;
+        transition-delay: 0.7s;
+    }
+
+    .shadow2 {
+        opacity: 0.1;
+        width: $formWidth + 40;
+        height: $formHeight + 40;
+        margin-left: -($formWidth / 2)-20;
+        margin-top: -($formHeight / 2)-20;
+        border-radius: 30px;
+        transition-delay: 0.9s;
+    }
+
+    .shadow3 {
+        opacity: 0.05;
+        width: $formWidth + 60;
+        height: $formHeight + 60;
+        margin-left: -($formWidth / 2)-30;
+        margin-top: -($formHeight / 2)-30;
+        border-radius: 40px;
+        transition-delay: 1s;
+    }
+
+    .login-form {
+        width: $formWidth;
+        height: $formHeight;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -($formWidth / 2);
+        margin-top: -($formHeight / 2);
+        border-radius: 15px;
+        background: rgb(70,66,85);
+        background: linear-gradient(140deg, rgba(70,66,85,1) 0%, rgba(36,36,47,1) 100%);
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        z-index: 99999;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        transition-delay: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 20px;
+
+        mat-icon.lock-icon {
+            font-size: 100px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+            margin-top: 30px;
+        }
+
+        mat-form-field {
+            height: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &.show {
+        opacity: 1;
+
+        .login-form {
+            opacity: 1;
+        }
+
+        .shadow {
+            transform: scale(1);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+        }
+
+        .shadow-black {
+            opacity: 1;
+        }
+    }
+}

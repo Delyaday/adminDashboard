@@ -1,0 +1,31 @@
+﻿
+.content {
+    padding: 15px;
+
+
+    h1 {
+        .icon-title {
+            margin-right: 5px;
+        }
+    }
+
+    .forms {
+        display: flex;
+        flex-direction: column;
+
+        mat-form-field {
+            margin-bottom: 15px;
+        }
+
+        .mat-input-wrapper {
+            width: 10px !important;
+        }
+    }
+
+    .horizontal-container {
+        display: flex;
+        width: 100%;
+        justify-content: stretch;
+        gap: 10px;
+    }
+}

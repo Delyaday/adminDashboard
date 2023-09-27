@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentSql\DocumentSql.Abstractions\DocumentSql.Abstractions.csproj" />
+    <ProjectReference Include="..\DocumentSql\DocumentSql.Core\DocumentSql.Core.csproj" />
+    <ProjectReference Include="..\DocumentSql\DocumentSql.Provider.Common\DocumentSql.Provider.Common.csproj" />
+    <ProjectReference Include="..\DocumentSql\DocumentSql.Provider.Sqlite\DocumentSql.Provider.Sqlite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BackgroundTasks\" />
+    <Folder Include="WebSocket\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

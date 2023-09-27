@@ -1,0 +1,72 @@
+﻿<div class="content">
+
+    <div class="display-date">
+        <span>{{ fullDate }}</span>
+    </div>
+
+    <div class="top-container">
+        <div class="info">
+            <h1 class="title"><fa-icon class="icon-title" [icon]="faSprayCanSparkles"></fa-icon>Услуги</h1>
+
+            <mat-form-field class="search my-mat-form-field-density-5">
+                <input class="input-search" matInput (keyup)="applyFilter($event)" placeholder="Поиск" #input>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <button mat-fab extended class="add-btn" color="primary" (click)="openDialog(undefined)">
+            <mat-icon>add</mat-icon>
+            Добавить
+        </button>
+
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Название услуги </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Категория </th>
+            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Цена </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} руб. </td>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+            <th mat-header-cell *matHeaderCellDef> Длительность </th>
+            <td mat-cell *matCellDef="let element"> {{element.duration}} мин.</td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Комментарии </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item color="info" (click)="openDialog(element)">
+                        <mat-icon>edit</mat-icon> Изменить
+                    </button>
+                    <button mat-menu-item color="warn" (click)="deleteService(element)">
+                        <mat-icon>delete</mat-icon> Удалить
+                    </button>
+                </mat-menu>
+            </td>
+        </ng-container>
+
+        <tr class="row-title " mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="example-element-row" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>

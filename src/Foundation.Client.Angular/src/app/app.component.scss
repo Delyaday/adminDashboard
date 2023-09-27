@@ -1,0 +1,47 @@
+
+$sidebarWidth: 250px;
+
+#application {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    #toolbar {
+        height: 55px;
+    }
+
+    #sidebar {
+        position: absolute;
+        left: 0px;
+        top: 55px;
+        bottom: 0px;
+        width: $sidebarWidth;
+        z-index: 8888;
+        background-color: #292929;
+        border-right: 1px solid rgba(255,255,255,.12);
+        opacity: 0;
+        transform: translateX(-$sidebarWidth);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        &.open {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    #content {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 55px;
+        bottom: 0px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,83 @@
+﻿<div class="content">
+
+    <h1 mat-dialog-title>
+        <fa-icon class="icon-title" [icon]="faUserPlus"></fa-icon>
+        Добавить запись
+    </h1>
+    <div mat-dialog-content class="forms">
+        <div class="horizontal-container">
+            <mat-form-field style="flex:2">
+                <mat-label>Дата</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="data.time" (dateChange)="dateChange($event.value)">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field style="flex:1">
+                <mat-label>Время</mat-label>
+
+                <input matInput
+                       [format]="24"
+                       [ngxMatTimepicker]="pickerD"
+                       [(ngModel)]="time"
+                       placeholder="12:00"
+                       [disabled]="!data.time"
+                       min="09:00"
+
+                       readonly />
+                <mat-hint>HH:mm</mat-hint>
+                <mat-icon matSuffix style="cursor:pointer"
+                          (click)=" data.time && pickerD.open()">
+                    watch_later
+                </mat-icon>
+
+                <ngx-mat-timepicker color="primary"
+                                    appendToInput="true"
+                                    (timeSet)="changeTime($event)"
+                                    #pickerD></ngx-mat-timepicker>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Клиент</mat-label>
+            <mat-select [(value)]="data.clientId">
+                <mat-option *ngFor="let client of clients" [value]="client.id">
+                    {{client.firstName}}
+                    <small>{{client.phone}}</small>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Услуга</mat-label>
+            <mat-select [(value)]="data.serviceId">
+                <mat-option *ngFor="let service of services" [value]="service.id">
+                    {{service.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Мастер</mat-label>
+            <mat-select [(value)]="data.staffId">
+                <mat-option *ngFor="let master of masters" [value]="master.id">
+                    <span *ngIf="!master.firstName">{{master.login}}</span>
+                    <span *ngIf="master.firstName">{{master.firstName}}</span>
+                    &nbsp;
+                    <span *ngIf="master.lastName">{{master.lastName}}</span>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Комментарии</mat-label>
+            <textarea matInput [(ngModel)]="data.description"></textarea>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Отменить</button>
+        <button [disabled]="!isValid()" mat-button [mat-dialog-close]="data" color="primary" cdkFocusInitial>Ок</button>
+    </div>
+
+</div>

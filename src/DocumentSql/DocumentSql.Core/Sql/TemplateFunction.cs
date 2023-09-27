@@ -1,0 +1,17 @@
+﻿namespace DocumentSql.Sql
+{
+    public class TemplateFunction : ISqlFunction
+    {
+        private readonly string _template;
+
+        public TemplateFunction(string template)
+        {
+            _template = template;
+        }
+
+        public string Render(string[] arguments)
+        {
+            return string.Format(_template, arguments);
+        }
+    }
+}

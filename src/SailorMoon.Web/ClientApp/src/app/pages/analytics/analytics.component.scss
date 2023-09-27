@@ -1,0 +1,178 @@
+.content {
+    padding: 30px;
+
+    .display-date {
+        display: flex;
+        justify-content: end;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .top-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .title {
+            font-size: 26px;
+            color: rgb(98, 63, 147);
+
+            .icon-title {
+                font-size: 24px;
+                margin-right: 15px;
+                color: #6e4e9e;
+            }
+        }
+
+        .add-btn {
+            padding: 18px;
+            font-size: 14px;
+
+            .icon-btn {
+                margin-right: 7px;
+            }
+        }
+    }
+
+    .cards {
+        display: flex;
+
+        .clients {
+            margin-right: 30px;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .icon-clients {
+                padding-top: 15px;
+                padding-bottom: 5px;
+                font-size: 40px;
+                color: rgb(5, 155, 255);
+            }
+
+            .number-clients {
+                font-size: 33px;
+                color: rgb(5, 155, 255);
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+
+            .title-clients {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 21px;
+                color: rgb(137, 136, 136);
+            }
+        }
+
+        .attendance {
+            margin-right: 30px;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .icon-attendance {
+                padding-top: 15px;
+                padding-bottom: 5px;
+                font-size: 40px;
+                color: rgb(255, 144, 32);
+            }
+
+            .number-attendance {
+                font-size: 33px;
+                color: rgb(255, 144, 32);
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+
+            .title-attendance {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 21px;
+                color: rgb(137, 136, 136);
+            }
+        }
+
+        .revenue {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .icon-revenue {
+                padding-top: 15px;
+                padding-bottom: 5px;
+                font-size: 40px;
+                color: rgb(90, 190, 96);
+            }
+
+            .number-revenue {
+                font-size: 33px;
+                color: rgb(90, 190, 96);
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+
+            .title-revenue {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 21px;
+                color: rgb(137, 136, 136);
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        margin-top: 35px;
+
+        .chart-card {
+            text-align: center;
+            margin-right: 30px;
+            box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+            mat-card-header {
+                margin-bottom: 10px;
+                color: rgb(98, 63, 147);
+            }
+
+            .chart {
+                height: 400px;
+                width: 400px;
+            }
+        }
+
+        .visits-card {
+            text-align: center;
+            box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            flex: 1;
+
+            mat-card-header {
+                margin-bottom: 10px;
+                color: rgb(98, 63, 147);
+            }
+
+            .chart {
+                height: 400px;
+                width: 800px;
+            }
+        }
+    }
+}

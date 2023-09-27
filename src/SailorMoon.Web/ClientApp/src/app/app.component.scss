@@ -1,0 +1,111 @@
+
+$sidebarWidth: 250px;
+$headerHeight: 60px;
+
+#application {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    #toolbar {
+        position: absolute;
+        height: $headerHeight;
+        background: #fff;
+        box-shadow: 0 0 28px 0 rgba(86,61,124,.13);
+        top: 0px;
+        right: 0px;
+        left: $sidebarWidth;
+        width: unset;
+
+        .toolbar-notifier {
+            font-size: 23px;
+            color: #6e4e9e;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    }
+
+    #sidebar {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: $sidebarWidth;
+        z-index: 8888;
+        background-color: #292929;
+        border-right: 1px solid rgba(255,255,255,.12);
+        background-image: linear-gradient(270deg,rgba(51,148,225,.18),transparent);
+        background-color: #584475;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        .brand {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            height: $headerHeight;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+
+        .brand-name {
+            cursor: pointer;
+        }
+
+        .menu {
+
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                margin-top: 90px;
+
+                li {
+                    cursor: pointer;
+                    font-weight: 400;
+                    color: white;
+                    font-size: 18px;
+                    height: 55px;
+                    line-height: 55px;
+                    padding-left: 20px;
+                    margin-bottom: 15px;
+
+                    span {
+                        margin-left: 25px;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                        text-decoration: none;
+                        background-color: rgba(0, 0, 0, .1)
+                    }
+                }
+
+                .active-button {
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: rgba(0, 0, 0, .1)
+                }
+            }
+        }
+    }
+
+    #content {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: $headerHeight;
+        bottom: 0px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}

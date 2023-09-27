@@ -1,0 +1,60 @@
+﻿<div class="content">
+
+    <h1 mat-dialog-title>
+        <fa-icon class="icon-title" [icon]="faUserPlus"></fa-icon>
+        Добавить работника
+    </h1>
+    <div mat-dialog-content class="forms">
+        <mat-form-field>
+            <mat-label>Логин</mat-label>
+            <input matInput required [(ngModel)]="data.login" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Имя</mat-label>
+            <input matInput required [(ngModel)]="data.firstName" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Фамилия</mat-label>
+            <input matInput [(ngModel)]="data.lastName" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Пароль</mat-label>
+            <input type="password" matInput required [(ngModel)]="password" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Телефон</mat-label>
+            <input matInput type="text" mask="(000) 000-000" [(ngModel)]="data.description.phone" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Должность</mat-label>
+            <input required matInput type="text" mask="(000) 000-000" [(ngModel)]="data.description.position" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Уровень доступа</mat-label>
+            <mat-select [(ngModel)]="data.description.accessLevel">
+                <mat-option [value]="0">
+                    Мастер
+                </mat-option>
+                <mat-option [value]="1">
+                    Админ
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Комментарии</mat-label>
+            <textarea matInput [(ngModel)]="data.description.description"></textarea>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Отменить</button>
+        <button [disabled]="!isValid()" mat-button [mat-dialog-close]="{staff: data, password: password}" color="primary" cdkFocusInitial>Ок</button>
+    </div>
+
+</div>

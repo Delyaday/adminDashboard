@@ -1,0 +1,84 @@
+@use '@angular/material' as mat;
+
+.mat-raised-button, .mat-stroked-button, .mat-flat-button {
+    padding: 0 1.15em;
+    margin: 0 .65em;
+    min-width: 3em;
+    line-height: 36.4px
+}
+
+.mat-standard-chip {
+    padding: .5em .85em;
+    min-height: 2.5em;
+}
+
+.material-icons {
+    font-size: 24px;
+    font-family: 'Material Icons Outlined', 'Material Icons';
+
+    .mat-badge-content {
+        font-family: 'Roboto';
+    }
+}
+
+body {
+    overflow: hidden;
+    background: #faf8fb;
+}
+
+.fc-event {
+    overflow: hidden;
+    white-space: normal;
+}
+
+.fc-daygrid-event {
+    white-space: normal !important;
+}
+
+.fc .fc-button-primary {
+    background-color: #a38cc6;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: indigo;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: indigo;
+}
+
+.fc .fc-daygrid-day-frame {
+    cursor: pointer;
+}
+
+.fc .fc-daygrid-day-frame:hover {
+    background-color: whitesmoke;
+}
+
+.fc-today-bg-color {
+    background-color: rgb(226, 130, 223, .15);
+}
+
+.fc-v-event {
+    background-color: rgb(107, 93, 143);
+}
+
+.fc .fc-list-event-dot {
+    border-color: rgb(107, 93, 143);
+}
+
+@mixin my-form-field-density($density) {
+    $field-typography: mat.define-typography-config( $body-1: mat.define-typography-level(12px, 24px, 400), );
+    @include mat.typography-level($field-typography, 'body-2');
+    @include mat.form-field-density($density);
+    margin-bottom: -18px; //  leaving a bottom margin 8px
+}
+
+.my-mat-form-field-density-5 {
+    @include my-form-field-density(-2);
+}
+
+
+:root {
+    --fc-today-bg-color: rgb(164,214, 218, .15);
+}
